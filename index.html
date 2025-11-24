@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen Final: Decisiones y Resoluciones Eficientes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<div id="author-signature">
+        Elaborado por el Prof. Peralta, Sebastián.
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+
+<body>
+
+    <header>
+        <h1>EXAMEN FINAL</h1>
+        <p>Decisiones y Resoluciones Eficientes</p>
+    </header>
+
+    <div class="container">
+        <nav class="tabs-nav">
+            <button class="tab-button active" onclick="showSection('exam-section')">Examen</button>
+            <button class="tab-button" onclick="showSection('repaso-section')">Repaso</button>
+        </nav>
+
+        <div id="exam-section">
+
+            <div id="attempt-info" class="attempt-box">
+                <h2>Seleccione el Módulo a Rendir</h2>
+                <select id="module-selector">
+                    <option value="">Seleccione un Módulo</option>
+                    <option value="modulo1">Módulo 1: Toma de Decisiones Estratégicas</option>
+                    <option value="modulo2">Módulo 2: Resolución de Problemas</option>
+                    <option value="modulo3">Módulo 3: Proceso de Toma de Decisiones Racional</option>
+                    <option value="modulo4">Módulo 4: Sostenibilidad y Liderazgo</option>
+                </select>
+                <button onclick="startExam()">Iniciar Examen</button>
+            
+                <div id="past-attempts-history">
+                    <h3>Historial de Intentos Guardados:</h3>
+                    <p id="no-attempts-msg" style="font-style: italic; color: #6c757d;">No hay intentos registrados aún.</p>
+                    <ul id="attempts-list"></ul>
+                </div>
+            </div>
+        
+            <div id="exam-container" style="display:none;">
+                <div class="timer-controls">
+                    <div id="timer">Tiempo Restante: 60:00</div>
+                    <button id="pause-btn" onclick="pauseTimer()">Pausar</button>
+                    <button id="restart-btn" onclick="confirmRestart()">Reiniciar</button>
+                    <button onclick="confirmFinish()">Finalizar</button>
+                </div>
+        
+                <h2 id="module-title"></h2>
+                <p style="text-align: center; color: #dc3545; font-weight: bold;">Este examen contiene 30 preguntas.</p>
+        
+                <form id="quiz-form"></form>
+        
+                <button onclick="submitExam()" class="submit-button">Corregir Examen</button>
+            </div>
+        
+            <div id="results-container" style="display:none;" class="results-box">
+                <h2>Resultados del Examen</h2>
+                <p id="result-score"></p>
+                <div id="detailed-results"></div>
+                <button onclick="restartAttempts()">Probar Más Intentos</button>
+            </div>
+
+        </div> <div id="repaso-section" style="display:none;">
+            <div class="repaso-content">
+                <h2>Resumen Explicativo de Puntos Principales por Módulo</h2>
+                <p>A continuación, se resumen los puntos clave por módulo, teniendo en cuenta los conceptos que se enfatizaron en los intentos de examen y las fuentes.</p>
+
+                <h3>Módulo 1: Toma de Decisiones Estratégicas en las Organizaciones</h3>
+                <p>Este módulo define el proceso de toma de decisiones y se enfoca en asegurar que las decisiones sean eficaces, eficientes y productivas.</p>
+                <h4>Puntos Principales:</h4>
+                <ul>
+                    <li>**Tipos de Decisión:** Se distingue entre la toma de decisiones proactiva (anticipación a situaciones u oportunidades) y reactiva (resolver situaciones urgentes). La toma de decisiones **reactiva genera mayor presión y menor éxito**.</li>
+                    <li>**Eficacia vs. Eficiencia:** La **eficacia** se refiere a lograr los resultados u objetivos (resolver la situación problemática). La **eficiencia** se centra en obtener el máximo rendimiento de los recursos utilizados. La **productividad** busca el óptimo equilibrio costo-beneficio.</li>
+                    <li>**Matriz de Covey (Importancia/Urgencia):** Es crucial trabajar en el paradigma de lo importante para evitar la urgencia. El **Cuadrante 2** (Importante/No Urgente) es el ideal para la planificación. El **Cuadrante 3** (Urgente/No Importante) agrupa tareas que deben **delegarse**.</li>
+                    <li>**Niveles de Decisión:** Las decisiones se clasifican según su impacto: **Operativas** (corto plazo, bajo impacto, gestión diaria, ej. reemplazo de personal), Tácticas (niveles intermedios), y **Estratégicas** (mediano/largo plazo, elevado impacto, relacionadas con la misión/visión, ej. lanzamiento de nuevos productos).</li>
+                    <li>**Costo de Oportunidad:** Mide el costo asociado a no elegir una alternativa. Se utiliza para seleccionar la opción que menor pérdidas potenciales genere.</li>
+                </ul>
+                <p><strong>Intentos de Examen y Puntos de Énfasis:</strong> Los intentos muestran un énfasis recurrente en la correcta definición de eficacia, la clasificación de decisiones por nivel (operativa vs. estratégica), y la correcta ubicación de escenarios en los cuadrantes de Covey.</p>
+
+                <hr>
+
+                <h3>Módulo 2: La Toma de Decisiones sobre Situaciones Problemáticas</h3>
+                <p>Este módulo se centra en la resolución de problemas y la necesidad de profundizar en las causas, no solo en los síntomas.</p>
+                <h4>Puntos Principales:</h4>
+                <ul>
+                    <li>**Definición de Problema:** Un problema es una situación que dificulta el cumplimiento normal de los objetivos. La resolución busca ajustar la brecha entre lo esperado y lo que sucede.</li>
+                    <li>**Analogía del Iceberg:** Solo el **10%** del problema es visible (síntomas), mientras que el **90%** de las causas suele estar oculto. No profundizar lleva a soluciones paliativas.</li>
+                    <li>**Tipos de Problema:** Se identifican problemas laborales, siendo los de **cultura organizacional** aquellos donde el factor determinante son los usos y costumbres arraigados que se ven como naturales.</li>
+                    <li>**Ciclo de Vida de la Resolución de Problemas (6 pasos):** El ciclo es circular y comienza con la **Identificación**, seguida de la **Recolección** de información y el **Análisis** del problema. La etapa de **Control de la solución** es crucial para monitorear que el problema no reaparezca.</li>
+                    <li>**Datos vs. Información:** Los datos son unidades primitivas insuficientes por sí solas; deben procesarse (calculando, contextualizando, graficando) para generar **información** que permita tomar decisiones en bases firmes.</li>
+                    <li>**Técnicas de Sostenibilidad:** Las **5S** (Clasificar, Organizar, Limpiar, Mantener y Respetar) son una filosofía de gestión de calidad para mantener un ambiente de trabajo productivo y evitar recurrencias.</li>
+                </ul>
+                <p><strong>Intentos de Examen y Puntos de Énfasis:</strong> Las preguntas se concentran fuertemente en la correcta identificación de las etapas del ciclo de vida en casos prácticos y el conocimiento de la Analogía del Iceberg (90% oculto).</p>
+                
+                <hr>
+
+                <h3>Módulo 3: Proceso de Toma de Decisiones Racional</h3>
+                <p>Este módulo abarca el proceso racional de 7 etapas y las herramientas específicas utilizadas en cada una, desde la identificación hasta la implementación.</p>
+                <h4>Puntos Principales:</h4>
+                <ul>
+                    <li>**Identificación y Recolección:** Herramientas incluyen la Entrevista, el método de los 5 Porqués, y el **Diagrama de Ishikawa** (Causa-Efecto).</li>
+                    <li>**Análisis de la Información:** Para validar las hipótesis, es fundamental utilizar información **cuantitativa** (cierta, medible y trazable), no cualitativa.</li>
+                    <li>**Herramientas Gráficas:** El gráfico de **líneas de tendencias** evalúa la evolución en el tiempo. El **gráfico circular** evalúa la participación relativa de las variables.</li>
+                    <li>**Desarrollo y Selección de Alternativas:** Se utilizan técnicas creativas como el **Brainwriting (6-3-5)**. La **Matriz de Priorización y Selección de Alternativas** es la herramienta clave para la selección.</li>
+                    <li>**Implementación y Evaluación:** La planificación debe incluir la designación de responsables, el uso del Diagrama de Gantt, y la realización de un **Kick off** (reunión de lanzamiento). Los objetivos de evaluación deben ser **SMART**.</li>
+                </ul>
+                <p><strong>Intentos de Examen y Puntos de Énfasis:</strong> Las preguntas recurrentes evalúan la correcta asociación de herramientas con la etapa del proceso racional (Matriz de Priorización = Selección; Kick off = Implementación), y la necesidad de usar información cuantitativa.</p>
+
+                <hr>
+
+                <h3>Módulo 4: Toma de Decisiones y Resolución de Problemas Sostenibles en el Tiempo</h3>
+                <p>El foco de este módulo es el liderazgo, la gestión del cambio y las metodologías que garantizan que las decisiones perduren.</p>
+                <h4>Puntos Principales:</h4>
+                <ul>
+                    <li>**Regla 10-10-10:** Evalúa el impacto en **10 minutos, 10 meses y 10 años**.</li>
+                    <li>**Liderazgo:** El líder debe escuchar, mantener la calma, y **reconocer** los logros para generar un efecto contagio.</li>
+                    <li>**Ciclo Emocional del Cambio:** La **"Zona de Peligro"** es la fase de **Malestar y Resistencia** (Pérdida/Duda), donde la mayoría de los proyectos fallan.</li>
+                    <li>**Técnicas Estratégicas:**
+                        <ul>
+                            <li>**Design Thinking:** Soluciones centradas en el usuario.</li>
+                            <li>**Seis Sombreros para Pensar:** El **Blanco** es para hechos y datos concretos. El **Verde** es para la creatividad.</li>
+                            <li>**Mapa de Actores:** Fundamental para analizar quiénes están involucrados e interesados.</li>
+                            <li>**Matriz FODA:** Analiza factores internos (Fortalezas, Debilidades) y externos (Oportunidades, Amenazas).</li>
+                        </ul>
+                    </li>
+                    <li>**Sostenibilidad:** La metodología **8D** busca soluciones permanentes. Las **5S** ayudan a prevenir recurrencias.</li>
+                </ul>
+                <p><strong>Intentos de Examen y Puntos de Énfasis:</strong> Las preguntas clave se centran en la identificación de la "Zona de Peligro", la aplicación de herramientas estratégicas (Mapa de Actores, FODA), y la regla 10-10-10.</p>
+            </div>
+        </div> </div> <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -267,3 +267,48 @@ header p {
     z-index: 1000;   /* Asegura que esté por encima de otros elementos */
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
+/* -------------------- Media Queries para Responsividad -------------------- */
+
+/* Estilos para pantallas pequeñas (Móviles - Máximo 600px) */
+@media (max-width: 600px) {
+    
+    /* 1. Ajuste del cuerpo y encabezado para móviles */
+    header h1 {
+        font-size: 1.8em; /* Reducir el tamaño del título principal */
+    }
+    
+    .container {
+        margin: 10px auto; /* Menos margen vertical */
+        padding: 10px; /* Menos relleno para aprovechar el espacio */
+    }
+    
+    /* 2. Ajuste de pestañas */
+    .tabs-nav {
+        display: block; /* Pone los botones de pestaña uno encima del otro */
+    }
+    
+    .tab-button {
+        width: 100%; /* Las pestañas ocupan todo el ancho */
+        margin-bottom: 5px;
+    }
+
+    /* 3. Reducción de tamaños de fuente en resultados y preguntas */
+    .question-block p {
+        font-size: 1em;
+    }
+    
+    #timer {
+        font-size: 1.2em;
+    }
+
+    /* 4. Posicionamiento de la firma del autor */
+    #author-signature {
+        position: static; /* Quita el fixed */
+        text-align: center;
+        margin-top: 20px;
+        box-shadow: none;
+        background-color: transparent;
+        border-top: 1px solid #eee;
+    }
+}
+
